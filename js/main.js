@@ -6,14 +6,13 @@ for (i=0; i<colorButton.length; i++) {
   var color = colorButton[i].id;
   console.log(color);
   changeColor(color);
-  document.getElementById(color).addEventListener("click", function() {
-    changeColor(color);
+  document.getElementById(color).addEventListener("click", function(event) {
+    var colorClass = event.target.className
+    changeColor(colorClass);
   });
 
 }
 
-function changeColor(color) {
-  document.getElementById(color).addEventListener("click", function() {
-    document.querySelector("body").style.backgroundColor = color.substring(0, color.length - 6);
-  });
+function changeColor(colorClass) {
+  document.body.className = colorClass;
 }
