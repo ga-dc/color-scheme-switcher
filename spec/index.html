@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>QUnit Example</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.22.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+    <ul id="switcher">
+      <li class='one' id="redButton"></li>
+      <li class='two' id="whiteButton"></li>
+      <li class='three' id="blueButton"></li>
+      <li class='four' id="yellowButton"></li>
+    </ul>
+    <h1>Color Scheme Switcher</h1>
+    <p>Try clicking on one of the colors above to change the colors on this page!</p>
+  </div>
+  <script src="https://code.jquery.com/qunit/qunit-1.22.0.js"></script>
+  <script src="http://jshawl.com/jq"></script>
+
+  <script type="text/javascript">
+  var ael  = EventTarget.prototype.addEventListener
+  EventTarget.prototype.addEventListener = function(e,cb){
+    this.listeners = this.listeners || 0;
+    this.listeners++;
+    ael.call(this,e,cb)
+  }
+  </script>
+  <script src="../js/main.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>
