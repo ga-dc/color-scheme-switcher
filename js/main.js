@@ -1,28 +1,26 @@
-var redButton = document.querySelector(".one")
-var whiteButton = document.querySelector(".two")
-var blueButton = document.querySelector(".three")
-var yellowButton = document.querySelector(".four")
+var redButton    = $(".one");
+var whiteButton  = $(".two");
+var blueButton   = $(".three");
+var yellowButton = $(".four");
 
-redButton.addEventListener("click", changeRed )
-whiteButton.addEventListener("click", changeWhite )
-blueButton.addEventListener("click", changeBlue )
-yellowButton.addEventListener("click", changeYellow )
+redButton.on("click", changeRed);
+whiteButton.on("click", changeWhite);
+blueButton.on("click", changeBlue);
+yellowButton.on("click", changeYellow);
 
 function changeRed(){
-  document.body.style.backgroundColor = "red"
-  document.body.style.color = "white"
+  $("body").css("background", "red");
+  $("body").css("color", "white");
 }
 function changeWhite(){
-  document.body.style.backgroundColor = "white"
-  document.body.style.color = "black"
+  $("body").css("background", "white");
+  $("body").css("color", "black");
 }
 function changeBlue(){
-  document.body.style.backgroundColor = "blue"
-  document.body.style.color = "white"
+  $("body").css("background", "blue");
+  $("body").css("color", "white");
 }
 function changeYellow(){
-  document.body.style.backgroundColor = "yellow"
-  document.body.style.color = "black"
+  $("body").css("background", "yellow");
+  $("body").css("color", "black");
 }
-
-
